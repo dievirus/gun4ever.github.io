@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>高路交通-css基础</title>
+	<link rel="stylesheet" href="./class.css">
+	<link rel="stylesheet" href="./animate.css">
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+	<div class="tips">高路信息-css基础</div>
+	<div class="container">
+		<div class="menu">
+			<ul>
+				<li class="link active" name="#id1">css介绍</li>
+				<li class="link" name="#id2">引入方式</li>
+				<li class="link" name="#id3">css选择器</li>
+				<li class="link" name="#id4">css盒模型</li>
+				<li class="link" name="#id5">margin,padding（边距）</li>
+				<li class="link" name="#id6">border（边框）</li>
+				<li class="link" name="#id7">text（文本）</li>
+				<li class="link" name="#id8">尺寸</li>
+				<li class="link" name="#id9">background（背景）</li>
+				<li class="link" name="#id10">position（定位）</li>
+				<li class="link" name="#id11">overflow</li>
+				<li class="link" name="#id12">float（浮动）</li>
+				<li class="link" name="#id13">hover（伪类）</li>
+				<li class="link" name="#id14">transition（过度）</li>
+				<li class="link" name="#id15">transform（转换）</li>
+				<li class="link" name="#id16">动画</li>
+				<li class="link" name="#id17">对齐</li>
+			</ul>
+		</div>
+		<div class="content">
+			<section id="id1">
+				<h2>css介绍</h2>
+				Css：层叠样式表（表现层），定义了html里面元素的展示方式，大小，位置，颜色，间距等
+			</section>
+			<section id="id2">
+				<h2>引入方式</h2>
+				<div>引入css的三种方式：行内引入；内嵌式；外部引入</div>
+				<div>
+					<div>
+						<div class="title">1.行内引入</div>
+						<img src="./image/css/1.png" alt="">
+						<img src="./image/css/2.png" alt="">
+					</div>
+					<div>
+						<div class="title">2.内嵌式</div>
+						<div>内嵌式：css规则有两个主要的部分组成：选择器，以及申明</div>
+						<img src="./image/css/3.png" alt="">
+						<img src="./image/css/4.png" alt="">
+						<img src="./image/css/5.png" alt="">
+					</div>
+					<div>
+						<div class="title">3.外部引入</div>
+						<img src="./image/css/6.png" alt="">
+						<img src="./image/css/7.png" alt="" class="mt">
+						<img src="./image/css/8.png" alt="">
+					</div>
+				</div>
+			</section>
+			<section id="id3">
+				<h2>css选择器</h2>
+				<div>
+					<div class="title">1.元素选择器</div>
+					<img src="./image/css/9.png" alt="">
+					<img src="./image/css/10.png" alt="" class="mt">
+				</div>
+				<div>
+					<div class="title">2.id选择器<span class="red">（唯一性）</span></div>
+					<img src="./image/css/11.png" alt="">
+					<img src="./image/css/12.png" alt="" class="mt">
+				</div>
+				<div>
+					<div class="title">3.类选择器</div>
+					<img src="./image/css/13.png" alt="">
+					<img src="./image/css/14.png" alt="" class="mt">
+				</div>
+				<div>
+					<div class="title">4.全局选择器</div>
+					<img src="./image/css/15.png" alt="">
+				</div>
+				<div>
+					<div class="title">5.伪类选择器</div>
+					<img src="./image/css/16.png" alt="">
+					<img src="./image/css/17.png" alt="" class="mt">
+					<img src="./image/css/18.png" alt="" class="inblock">
+					<img src="./image/css/19.png" alt="" class="inblock">
+					<img src="./image/css/20.png" alt="" class="inblock">
+				</div>
+				<div>
+					<div class="title">6.属性选择器</div>
+					<img src="./image/css/21.png" alt="">
+					<img src="./image/css/22.png" alt="" class="mt">
+				</div>
+				<div>
+					<div class="title">7.包含选择器</div>
+					<img src="./image/css/23.png" alt="">
+					<img src="./image/css/24.png" alt="" class="mt">
+					<img src="./image/css/25.png" alt="">
+				</div>
+				<div>
+					<div class="title">8.子选择器</div>
+					<img src="./image/css/26.png" alt="">
+					<img src="./image/css/27.png" alt="" class="mt">
+					<img src="./image/css/28.png" alt="">
+				</div>
+				<div>
+					<div class="title">选择器优先级</div>
+					<span>id选择器>类选择器>元素选择器</span>
+					<img src="./image/css/29.png" alt="" class="mt">
+					<img src="./image/css/30.png" alt="" class="mt">
+					<img src="./image/css/31.png" alt="">
+					<img src="./image/css/32.png" alt="">
+					<img src="./image/css/33.png" alt="">
+					<span class="mt">尽量少用id选择器</span>
+				</div>
+			</section>
+			<section id="id4">
+				<h2>css盒模型</h2>
+				<div>所有的HTML元素都可以看做是一个盒子</div>
+				<img src="./image/css/34.png" alt="">
+				<div>margin：外边距</div>
+				<div>border：边框</div>
+				<div>padding：内边距</div>
+				<div>content：内容</div>
+				<img src="./image/css/35.png" alt="">
+				<img src="./image/css/36.png" alt="">
+				<img src="./image/css/37.png" alt="" class="mt">
+				<img src="./image/css/38.png" alt="">
+			</section>
+			<section id="id5">
+				<h2>margin，padding（边距）</h2>
+				<img src="./image/css/39.png" alt="" class="mt">
+			</section>
+			<section id="id6">
+				<h2>border（边框）</h2>
+				<img src="./image/css/40.png" alt="" >
+				<img src="./image/css/41.png" alt="" class="mt">
+				<img src="./image/css/42.png" alt="" >
+				<img src="./image/css/43.png" alt="" >
+				<img src="./image/css/44.png" alt="" >
+				<div class="title">圆角</div>
+				<img src="./image/css/45.png" alt="" >
+				<img src="./image/css/46.png" alt="" >
+				<img src="./image/css/47.png" alt="" >
+				<img src="./image/css/48.png" alt="" >
+			</section>
+			<section id="id7">
+				<h2>文本</h2>
+				<img src="./image/css/49.png" alt="" >
+				<img src="./image/css/50.png" alt="" class="mt">
+				<img src="./image/css/51.png" alt="" >
+				<div>十六进制值 - 如: ＃FF6C6C</div>
+				<div>RGB值 - 如: RGB(255,0,0)</div>
+				<div>颜色的名称 - 如: red</div>
+				<img src="./image/css/52.png" alt="" >
+				<img src="./image/css/53.png" alt="">
+				<img src="./image/css/54.png" alt="">
+				<img src="./image/css/55.png" alt="" >
+				<img src="./image/css/56.png" alt="" >
+				<img src="./image/css/57.png" alt="" >
+				<img src="./image/css/58.png" alt="" >
+				<img src="./image/css/59.png" alt="" >
+				<img src="./image/css/60.png" alt="" >
+				<img src="./image/css/61.png" alt="" >
+				<img src="./image/css/62.png" alt="" >
+				<img src="./image/css/63.png" alt="" >
+				<img src="./image/css/64.png" alt="" >
+			</section>
+			<section id="id8">
+				<h2>尺寸</h2>
+				<img src="./image/css/65.png" alt="" >
+				<img src="./image/css/66.png" alt="" >
+				<img src="./image/css/67.png" alt="" >
+				<img src="./image/css/68.png" alt="" >
+				<img src="./image/css/69.png" alt="" >
+				<div class="mt red">注：块级元素和行内块级元素才可以设置高宽，行内元素不能设置</div>
+				<div>1.设置成块级元素<img class="inblock" src="./image/css/70.png" alt=""></div>
+				<div>2.设置成行内块级元素<img class="inblock" src="./image/css/71.png" alt=""></div>
+				<div>设置成行内元素<img class="inblock" src="./image/css/72.png" alt=""></div>
+				<p>display:none;隐藏</p>
+				<p>visibility:hidden;隐藏</p>
+				<p>区别：visibility隐藏后的元素任然会占用空间，display:none则不会</p>
+				<img src="./image/css/73.png" alt="" >
+				<img src="./image/css/74.png" alt="" >
+				<img src="./image/css/75.png" alt="" >
+				<img src="./image/css/76.png" alt="" >
+				<img src="./image/css/77.png" alt="" >
+			</section>
+			<section id="id9">
+				<h2>background（背景）</h2>
+				<img src="./image/css/78.png" alt="" >
+				<img src="./image/css/79.png" alt="" >
+				<img src="./image/css/80.png" alt="" >
+				<img src="./image/css/81.png" alt="" >
+				<img src="./image/css/82.png" alt="" >
+				<img src="./image/css/83.png" alt="" >
+				<img src="./image/css/84.png" alt="" >
+				<img src="./image/css/85.png" alt="" >
+				<img src="./image/css/86.png" alt="" >
+				<img src="./image/css/87.png" alt="" >
+				<img src="./image/css/88.png" alt="" >
+				<img src="./image/css/89.png" alt="" >
+				<img src="./image/css/90.png" alt="" >
+				<div class="mt">强制铺满，图片不成比例，会变形</div>
+			</section>
+			<section id="id10">
+				<h2>position（定位）</h2>
+				<div>常用的postion属性值：static，relative，absolute，fixed；通过left，top，right，bottom来定位</div>
+				<div>
+					<div class="title">1.static</div>
+					<div>默认值，没有定位，遵循正常的文档流</div>
+				</div>
+				<div>
+					<div class="title">2.relative</div>
+					<div>相对定位，相对正常的位置</div>
+					<img src="./image/css/91.png" alt="" >
+					<img src="./image/css/92.png" alt="" >
+					<img src="./image/css/93.png" alt="" >
+					<img src="./image/css/94.png" alt="" >
+					<img src="./image/css/95.png" alt="" >
+					<img src="./image/css/96.png" alt="" >
+					<img src="./image/css/97.png" alt="" >
+					<img src="./image/css/98.png" alt="" >
+					<img src="./image/css/99.png" alt="" >
+				</div>
+				<div>
+					<div class="title">3.absolute</div>
+					<div>绝对定位的元素是相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于根元素，脱离文档流，不占据空间</div>
+					<img src="./image/css/100.png" alt="" >
+					<img src="./image/css/101.png" alt="" >
+					<img src="./image/css/102.png" alt="" >
+					<img src="./image/css/103.png" alt="" >
+					<img src="./image/css/104.png" alt="" >
+				</div>
+				<div>
+					<div class="title">7.fixed</div>
+					<div>基于浏览器窗口定位，也是脱离文档流的</div>
+					<img src="./image/css/105.png" alt="" >
+					<img src="./image/css/106.png" alt="" >
+					<img src="./image/css/107.png" alt="" >
+					<img src="./image/css/108.png" alt="" >
+					<img src="./image/css/109.png" alt="" >
+				</div>
+				<div>Z-index可以设置层级，<img class="inblock" src="./image/css/110.png" alt="" >两个定位的元素发生重叠，层级高的就会显示在最上面，低的则会被覆盖</div>
+			</section>
+			<section id="id11">
+				<h2>overflow</h2>
+				<div>内容溢出时的显示方式 ,属性值为：hidden，scroll，auto</div>
+				<img src="./image/css/111.png" alt="" >
+				<img src="./image/css/112.png" alt="" >
+				<img src="./image/css/113.png" alt="" >
+				<img src="./image/css/114.png" alt="" >
+				<img src="./image/css/115.png" alt="" >
+				<img src="./image/css/116.png" alt="" >
+				<img src="./image/css/117.png" alt="" >
+				<img src="./image/css/118.png" alt="" >
+				<img src="./image/css/119.png" alt="" >
+				<img class="inblock" src="./image/css/120.png" alt="" > <span>超过才会显示滚动条</span>
+				<div class="mt">这是设置overflow-y:scroll</div>
+				<img src="./image/css/121.png" alt="" >
+				<div>这是设置overflow:auto</div>
+				<img src="./image/css/122.png" alt="" >
+			</section>
+			<section id="id12">
+				<h2>float（浮动）</h2>
+				<div>值为：none，left，right，浮动的元素也会脱离文档流，可用于布局</div>
+				<img src="./image/css/123.png" alt="" >
+				<img src="./image/css/124.png" alt="" >
+				<img src="./image/css/125.png" alt="" >
+				<div>由于脱离文档流，所以父级的高度塌陷了，解决办法：清除浮动</div>
+				<div>
+					<div class="title">1.在最后浮动的一个元素后新加一个标签</div>
+					<img src="./image/css/126.png" alt="" >
+					<img src="./image/css/127.png" alt="" >
+					<img src="./image/css/128	.png" alt="" >
+				</div>
+				<div>
+					<div class="title">2.使用after伪元素清除浮动：</div>
+					<img src="./image/css/129.png" alt="" >
+					<img src="./image/css/130.png" alt="" >
+					<img src="./image/css/131.png" alt="" >
+				</div>
+			</section>
+			<section id="id13">
+				<h2>hover（伪类））</h2>
+				<img src="./image/css/132.png" alt="" >
+				<img src="./image/css/133.png" alt="" >
+				<img src="./image/css/134.png" alt="" class="inblock" style="display:none">
+				<img src="./image/css/135.png" alt="" class="inblock" style="display:none">
+				<div class="btn pointer mt">鼠标悬浮</div>
+				<div class="mt">opacity：透明度，值在0~1之间</div>
+				<div class="btn mt" style="opacity:0.2">透明度0.2</div>
+				<div class="btn mt" style="opacity:0.5">透明度0.5</div>
+				<div class="btn mt" style="opacity:0.8">透明度0.8</div>
+				<div class="btn mt" style="opacity:1">透明度1</div>
+				<div class="mt">cursor：光标样式：值为pointer，help，wait......</div>
+				<div class="btn mt pointer">pointer</div>
+				<div class="btn mt help">help</div>
+				<div class="btn mt wait">wait</div>
+			</section>
+			<section id="id14">
+				<h2>transition（过度）</h2>
+				<div class="title">1.颜色过度</div>
+				<img src="./image/css/136.png" alt="" >
+				<img src="./image/css/137.png" alt="" >
+				<div class="btn ts1 mt">渐变1s</div>
+				<div class="btn ts2 mt">渐变2s</div>
+				<div class="title">2.尺寸渐变</div>
+				<img src="./image/css/138.png" alt="" >
+				<img src="./image/css/139.png" alt="" >
+				<div class="size-ts mt">尺寸渐变</div>
+				<img src="./image/css/140.png" alt="" >
+				<div class="size-ts size-ts-delay mt">尺寸渐变延时</div>
+			</section>
+			<section id="id15">
+				<h2>transform（转换）</h2>
+				<div class="title">1.旋转</div>
+				<img src="./image/css/141.png" alt="" >
+				<img src="./image/css/142.png" alt="" >
+				<div class="rotatex transform mt">旋转（X轴）</div>
+				<div class="rotatey transform mt">旋转（Y轴）</div>
+				<div class="title">2.缩放</div>
+				<img src="./image/css/143.png" alt="" >
+				<img src="./image/css/144.png" alt="" >
+				<div class="scale transform mt" >缩放</div>
+				<div class="title">3.倾斜</div>
+				<img src="./image/css/145.png" alt="" >
+				<img src="./image/css/146.png" alt="" >
+				<div class="skew transform mt">倾斜</div>
+			</section>
+			<section id="id16">
+				<h2>动画</h2>
+				<img src="./image/css/147.png" alt="" >
+				<img src="./image/css/148.png" alt="" >
+				<div class="btn-ani btn mt">点击播放动画</div>
+				<div class="animate-start mt"></div>
+				<div class="animated1 btn mt">动画1</div>
+				<div class="mt animate-text animate-text1 animated">css动画演示</div>
+				<div class="animated2 btn mt ">动画2</div>
+				<div class="mt animate-text animate-text2 animated">css动画演示</div>
+				<div class="animated3 btn mt">动画3</div>
+				<div class="mt animate-text animate-text3 animated">css动画演示</div>
+				<div class="animated4 btn mt	">动画4</div>
+				<div class="mt animate-text animate-text4 animated">css动画演示</div>
+			</section>
+			<section id="id17">
+				<h2>对齐</h2>
+				<div>
+					<div class="title">1.文本居中对齐</div>
+					<img src="./image/css/149.png" alt="">
+					<img src="./image/css/150.png" alt="">
+					<img src="./image/css/151.png" alt="">
+				</div>
+				<div>
+					<div class="title">2.元素水平居中对齐</div>
+					<img src="./image/css/152.png" alt="">
+					<img src="./image/css/153.png" alt="">
+					<img src="./image/css/154.png" alt="">
+				</div>
+				<div>
+					<div class="title">3.元素左右对齐</div>
+					<img src="./image/css/155.png" alt="">
+					<img src="./image/css/156.png" alt="">
+					<img src="./image/css/157.png" alt="">
+				</div>
+				<div>
+					<div class="title">4.垂直居中</div>
+					<img src="./image/css/158.png" alt="">
+					<img src="./image/css/159.png" alt="">
+					<img src="./image/css/160.png" alt="">
+					<img src="./image/css/161.png" alt="">
+					<img src="./image/css/162.png" alt="">
+				</div>
+				<div>
+					<div class="title">5.垂直水平</div>
+					<img src="./image/css/163.png" alt="">
+					<img src="./image/css/164.png" alt="">
+					<img src="./image/css/165.png" alt="">
+					<img src="./image/css/166.png" alt="">
+					<img src="./image/css/167.png" alt="">
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+
+<script>
+	$(function() {
+		$('.link').click(function() {
+			let a = $(this).attr('name')
+			let top = $(a).offset().top
+			$('html,body').animate({scrollTop:top},300);
+			$('.menu').find('li').removeClass('active');
+			$(this).addClass('active');
+		})
+		$('.btn-ani').click(function() {
+			$('.animate-start').addClass('animate')
+		})
+		$('.animated1').click(function() {
+			$('.animate-text1').addClass('flipInX')
+		})
+		$('.animated2').click(function() {
+			$('.animate-text2').addClass('flipInY')
+		})
+		$('.animated3').click(function() {
+			$('.animate-text3').addClass('rollIn')
+		})
+		$('.animated4').click(function() {
+			$('.animate-text4').addClass('bounceIn')
+		})
+	})
+</script>
+</html>
