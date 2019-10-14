@@ -406,15 +406,27 @@
 		})
 		$('.animated1').click(function() {
 			$('.animate-text1').addClass('flipInX')
+			setTimeout(function() {
+				$('.animate-text1').removeClass('flipInX')
+			},3000)
 		})
 		$('.animated2').click(function() {
 			$('.animate-text2').addClass('flipInY')
+			setTimeout(function() {
+				$('.animate-text2').removeClass('flipInY')
+			},3000)
 		})
 		$('.animated3').click(function() {
 			$('.animate-text3').addClass('rollIn')
+			setTimeout(function() {
+				$('.animate-text3').removeClass('rollIn')
+			},3000)
 		})
 		$('.animated4').click(function() {
 			$('.animate-text4').addClass('bounceIn')
+			setTimeout(function() {
+				$('.animate-text4').removeClass('bounceIn')
+			},3000)
 		})
 	})
 </script>
