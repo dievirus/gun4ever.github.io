@@ -42,7 +42,7 @@ ul,li {
 	cursor: pointer;
 }	
 .menu li:hover {
-	background:rgba(236,245,255);
+	background:rgb(236,245,255);
 	transition:0.5s;
 }
 .menu li.active  {
@@ -179,4 +179,9 @@ img {
 .animate-text {
 	font-size:20px;
 	padding:10px 0;
+}
+.test {
+	text-decoration: none;
+	padding:10px 40px;
+	margin:20px 0;
 }

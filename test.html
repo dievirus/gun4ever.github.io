@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="./test.css">
 	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 </head>
+
 <body>
 	<header class="header">
 		<div class="header-wrap">
@@ -59,9 +60,11 @@
 		let height = document.documentElement.clientHeight - 160
 		$('.content').height(height)
 		$('.item').hover(function() {
-			$(this).find('.menu').slideDown(300)
+			// $(this).find('.menu').slideDown(300)
+			$(this).find('.menu').addClass('move')
 		},function() {
-			$(this).find('.menu').slideUp(300)
+			$(this).find('.menu').removeClass('move')
+			// $(this).find('.menu').slideUp(300)
 		})
 	})
 </script>
