@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>高路交通-js基础</title>
+	<link rel="stylesheet" href="./class.css">
+	<link rel="stylesheet" href="./animate.css">
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+	<div class="tips">高路信息-js基础</div>
+	<div class="container">
+		<div class="menu">
+			<ul>
+				<li class="link active" name="#id1">javascript介绍</li>
+				<li class="link" name="#id2">引入方式</li>
+				<li class="link" name="#id3">语法</li>
+				<li class="link" name="#id4">变量</li>
+				<li class="link" name="#id5">数据类型</li>
+				<li class="link" name="#id6">运算符</li>
+				<li class="link" name="#id7">函数</li>
+				<li class="link" name="#id8">对象</li>
+				<li class="link" name="#id9">数组</li>
+				<li class="link" name="#id10">日期</li>
+				<li class="link" name="#id11">for循环</li>
+				<li class="link" name="#id12">条件</li>
+				<li class="link" name="#id13">事件</li>
+				<li class="link" name="#id14">事件冒泡与捕获</li>
+			</ul>
+		</div>
+		<div class="content">
+			<section id="id1">
+				<h2>javascript介绍</h2>
+				<div>javascript：脚本语言（行为层）</div>
+				<div class="btn mt" onclick="test1()">点击我</div>
+			</section>
+			<section id="id2">
+				<h2>引入方式</h2>
+				<div class="title">1.内部引入</div>
+				<img src="./image/js/1.jpg" alt="">
+				<img src="./image/js/2.jpg" alt="">
+				<div class="title">2.外部引入</div>
+				<img src="./image/js/3.jpg" alt="">
+			</section>
+			<section id="id3">
+				<h2>语法</h2>
+				<div>javaScript 语法是一套规则，它定义了 javaScript 的语言结构。</div>
+				<img src="./image/js/4.jpg" alt="">
+			</section>
+			<section id="id4">
+				<h2>变量</h2>
+				<div>js变量是用来存储数据的容器</div>
+				<div class="mt">通过var 声明一个变量，在ES6中用let来申明变量</div>
+				<img src="./image/js/5.jpg" alt="">
+				<div class="mt">
+					<div>1.名称必须以字母开头</div>
+					<div>2.名称可包含字母、数字、下划线和美元符号	</div>
+					<div>3.名称对大小写敏感（y 和 Y 是不同的变量）</div>
+					<div>4.保留字（比如 javaScript 的关键词）无法用作变量名称</div>
+				</div>
+			</section>
+			<section id="id5">
+				<h2>数据类型</h2>
+				<div>js变量是用来存储数据的容器</div>
+				<div class="title">基本数据类型：</div>
+				<div>字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol</div>
+				<div class="title">引用数据类型：</div>
+				<div>对象(Object)、数组(Array)、函数(Function)</div>
+				<div class="title">字符串：</div>
+				<div>var name = 'javascript';</div>
+				<div class="title">数字：</div>
+				<div>var length = 3;</div>
+				<div class="title">布尔：</div>
+				<div>var a = true</div>
+				<div>var b = false</div>
+				<div class="title">空：</div>
+				<div>var c = null</div>
+				<div class="title">数组</div>
+				<div>var arr = [1,2,3]</div>
+				<div class="title">对象：</div>
+				<img src="./image/js/6.jpg" alt="">
+				<div class="title">函数：</div>
+				<img src="./image/js/7.jpg" alt="">
+			</section>
+			<section id="id6">
+				<h2>运算符</h2>
+				<div>加，减，乘，除，取余，自增，自减</div>
+				<img src="./image/js/8.jpg" alt="">
+				<div class="mt">a++和++a的区别</div>
+			</section>
+			<section id="id7">
+				<h2>函数</h2>
+				<div>函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块</div>
+				<div class="mt">函数就是包裹在花括号中的代码块，前面使用了关键词 function：</div>
+				<img src="./image/js/7.jpg" alt="">
+				<div class="mt">调用：</div>
+				<img src="./image/js/10.jpg" alt="">
+				<img src="./image/js/9.jpg" alt="">
+				<div class="btn mt" onclick="myFun()">点我执行函数</div>
+				<div class="mt">带参函数：</div>
+				<img src="./image/js/11.jpg" alt="">
+				<img src="./image/js/12.jpg" alt="">
+				<div class="btn mt" onclick="argFun('javascript')">点我执行带参函数</div>
+			</section>
+			<section id="id8">
+				<h2>对象</h2>
+				<div>万物皆对象，没有对象怎么办，给你new一个对象，对象有一些属性，也可以有一些方法</div>
+				<div class="mt">比如，小猫就可以看做是一个对象，小猫有颜色，性别，年龄等，这些都是他的属性，他可以叫，可以吃，这些都是他的方法，可嵌套</div>
+				<img src="./image/js/13.jpg" alt="">
+			</section>
+			<section id="id9">
+				<h2>数组</h2>
+				<div>可以存放多个值</div>
+				<img src="./image/js/14.jpg" alt="">
+				<div>二维数组</div>
+				<img src="./image/js/15.jpg" alt="">
+				<div class="title">常用方法</div>
+				<div>1.长度</div>
+				<img src="./image/js/16.jpg" alt="">
+				<div class="mt">2.join()</div>
+				<img src="./image/js/17.jpg" alt="">
+				<div class="mt">3.push()</div>
+				<img src="./image/js/18.jpg" alt="">
+				<div class="mt">4.concat()</div>
+				<img src="./image/js/19.jpg" alt="">
+				<div class="mt">4.splice()</div>
+				<img src="./image/js/20.jpg" alt="">
+				<div class="mt">5.sort()</div>
+				<img src="./image/js/21.jpg" alt="">
+			</section>
+			<section id="id10">
+				<h2>日期</h2>
+				<img src="./image/js/22.jpg" alt="">
+				<img src="./image/js/23.jpg" alt="">
+			</section>
+			<section id="id11">
+				<h2>for循环</h2>
+				<div>数字遍历</div>
+				<img src="./image/js/24.jpg" alt="">
+				<div class="mt">数组遍历</div>
+				<img src="./image/js/25.jpg" alt="">
+				<div class="mt">对象遍历</div>
+				<img src="./image/js/26.jpg" alt="">
+			</section>
+			<section id="id12">
+				<h2>条件</h2>
+				<div class="title">1.if else语句</div>
+				<img src="./image/js/27.jpg" alt="">
+				<img src="./image/js/28.jpg" alt="">
+				<div class="title">2.switch语句</div>
+				<img src="./image/js/29.jpg" alt="">
+				<img src="./image/js/30.jpg" alt="">
+			</section>
+			<section id="id13">
+				<h2>事件</h2>
+				<div class="title">1.点击事件</div>
+				<div class="btn" onclick="alert('我被点击了')">快来点击我</div>
+				<img src="./image/js/31.jpg" alt="">
+				<div class="title">2.输入框事件</div>
+				<input class="block mt" type="text" placeholder="失去焦点触发事件" onblur="console.log('失去了焦点')">
+				<input class="block mt" type="text" placeholder="改变内容触发事件" onchange="console.log('改变了内容')">
+				<img src="./image/js/32.jpg" alt="">
+				<div class="title">3.键盘事件</div>
+				<input type="text" placeholder="键盘按下事件" onkeydown="console.log('按下了键盘')" onkeyup="console.log('离开了键盘')">
+				<div class="title">4.鼠标事件</div>
+				<div class="btn" onmouseover="console.log('鼠标移动上来了')" onmouseout="console.log('鼠标移走了')">鼠标事件</div>
+				<img src="./image/js/33.jpg" alt="">
+			</section>
+			<section id="id14">
+				<h2>事件冒泡与捕获</h2>
+				<div class="title">1.冒泡</div>
+				<img src="./image/js/34.jpg" alt="">
+				<img src="./image/js/35.jpg" alt="">
+				<div id="parent"  class="mt" style="border:1px solid red;padding:50px;">
+					<div id="child" style="border:1px solid #000;padding:50px;"></div>
+				</div>
+				<div class="title">2.捕获</div>
+				<div id="parent1" style="border:1px solid red;padding:50px;">
+					<div id="child1" style="border:1px solid #000;padding:50px;"></div>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+
+<script>
+	document.getElementById('parent').addEventListener('click',function() {
+		alert('parent')
+	},false)
+	document.getElementById('child').addEventListener('click',function() {
+		alert('child')
+	},false)
+	document.getElementById('parent1').addEventListener('click',function() {
+		alert('parent')
+	},true)
+	document.getElementById('child1').addEventListener('click',function() {
+		alert('child')
+	},true)
+	// let b = 3
+	// switch(b) {
+	// 	case 1:
+	// 		console.log(1)
+	// 		break
+	// 	case 2:
+	// 		console.log(2)
+	// 		break
+	// 	case 3:
+	// 		console.log(3)
+	// 		break
+	// 	default:
+	// 		console.log('其他')
+	// 		break
+	// }
+	// let a = 5
+
+	// if(a > 4) {
+	// 	console.log('a的值大于4') 
+	// }else {
+	// 	console.log('a的值不大于4')
+	// }
+	// // 会输出：a的值大于4
+	// if(a == 3) {
+	// 	console.log('a的值为3')
+	// }else if(a == 5) {
+	// 	console.log('a的值为5')
+	// }else {
+	// 	console.log('a为其他值')
+	// }
+	// // 会输出：a的值为5
+
+	// for(let i = 0;i < 5;i++) {
+	// 	console.log(i)
+	// }
+	// // 会依次输出0,1,2,3,4
+
+	// let arr = ['html','css','js']
+	// for(let i = 0;i < arr.length; i++) {
+	// 	console.log(arr[i])
+	// }
+	// // 分别会输出 html;css;js
+
+	// let obj = {
+	// 	name:'姓名',
+	// 	age:10,
+	// 	sex:'male'
+	// }
+	// for(let i in obj) {
+	// 	console.log(i) // 会依次输出: name;age;sex
+	// 	console.log(obj[i]) // 会依次输出: 姓名；10；male
+	// }
+
+	// let date = new Date() // 时间对象
+	// let year = date.getFullYear() // 获取年份
+	// let month = date.getMonth() + 1 // 获取月份
+	// let day = date.getDate() // 获取日期
+	// let hour = date.getHours() // 获取小时
+	// let minute = date.getMinutes() // 获取分
+	// let seconde = date.getSeconds()// 获取秒
+	// console.log(year+'-'+month+'-'+day+'-'+hour+'-'+minute+'-'+seconde) // 2019-10-15-16-39
+	// alert(date)
+	// var a = [1,2]
+	// var b = a.push(3)
+	// console.log(a)
+	// let myArr = ['html','css','js']
+	// myArr.splice(0,1) // ['css','js']
+	// myArr.splice(1,0,'java') // ['html','java','css','js']
+	// console.log(myArr)
+	// let a = [6,3,5,0,1]
+	// a.sort() // 0,1,3,5,6
+	// console.log(a)
+	// let myArr1 = ['java']
+	// let myArr2 = myArr.concat(myArr1) // ['html','css','js','java']
+	// console.log(myArr2)
+	// myArr.push('java') 
+	// console.log(myArr2)
+	// myArr[0] // html
+	// myArr[1] // css
+
+	// myArr.length // 3
+
+	// let myArr1 = myArr.join('-') // html-css-js
+	// let hh = myArr.push('java') // ['html','css','js','java']
+	// console.log(hh)
+	// let arr = [
+	// 	'html',
+	// 	'css',
+	// 	[
+	// 		'jquery',
+	// 		'react',
+	// 		'vue',
+	// 		'angular'
+	// 	]
+	// ]
+	// console.log(arr[2][2])
+	// let cat = {
+	// 	color: 'black',
+	// 	sex: 'female',
+	// 	age: 1,	
+	// 	eat: function() {
+	// 		console.log('我在吃东西')
+	// 	},
+	// 	run: function() {
+	// 		console.log('我在跑')
+	// 	}
+	// }
+	// alert(cat.color)
+	// alert(cat['color'])
+	function myFun() {
+		alert('这是一个函数')
+	}
+	function argFun(name) {
+		alert('我的名字是' + name)
+	}
+	function test1() {
+			alert('这是点击的内容')
+		}
+	$(function() {
+		$('.link').click(function() {
+			let a = $(this).attr('name')
+			let top = $(a).offset().top
+			$('html,body').animate({scrollTop:top},300);
+			$('.menu').find('li').removeClass('active');
+			$(this).addClass('active');
+		})
+	})
+</script>
+</html>

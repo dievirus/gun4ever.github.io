@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>高路交通-vue基础</title>
+	<link rel="stylesheet" href="./class.css">
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div class="tips">高路信息-vue基础</div>
+	<div class="container">
+		<div class="menu">
+			<ul>
+				<li class="link active" name="#id1">vue介绍</li>
+				<li class="link" name="#id2">安装</li>
+				<li class="link" name="#id3">vue实例</li>
+				<li class="link" name="#id4">vue生命周期</li>
+				<li class="link" name="#id5">模板语法</li>
+				<li class="link" name="#id6">指令</li>
+				<li class="link" name="#id7">computed计算属性</li>
+				<li class="link" name="#id8">watch属性</li>
+				<li class="link" name="#id9">class与style绑定</li>
+				<li class="link" name="#id10">条件渲染</li>
+				<li class="link" name="#id11">列表渲染</li>
+				<li class="link" name="#id12">事件处理</li>
+				<li class="link" name="#id13">数据绑定</li>
+				<li class="link" name="#id14">组件</li>
+				<li class="link" name="#id15">路由</li>
+			</ul>
+		</div>
+		<div class="content">
+			<section id="id1">
+				<h2>vue介绍</h2>
+				<div>是一个js的框架，基于MVVM模型</div>
+			</section>
+			<section id="id2">
+				<h2>安装</h2>
+				<div class="title">1.script引入</div>
+				<img src="./image/vue/1.jpg" alt="">
+				<div class="title">2.npm安装</div>
+				<div class="mt">先安装node，然后npm install vue</div>
+			</section>
+			<section id="id3">
+				<h2>vue实例</h2>
+				<img src="./image/vue/2.jpg" alt="">
+			</section>
+			<section id="id4">
+				<h2>vue生命周期</h2>
+				<div class="title">1.beforeCreate:</div>
+				<div class="mt">实例组件刚创建，元素DOM和数据都还没有初始化</div>
+				<div class="title">2.created:</div>
+				<div class="mt">数据data已经初始化完成，方法也已经可以调用，但是DOM还未渲染</div>
+				<div class="title">3.beforeMount:</div>
+				<div class="mt">DOM未完成挂载，数据也初始化完成，但是数据的双向绑定还是显示{{}}，这是因为Vue采用了Virtual DOM（虚拟Dom）</div>
+				<div class="title">4.mounted:</div>
+				<div class="mt">数据和DOM都完成挂载，在上一个周期占位的数据把值给渲染进去。一般请求会放在这个地方，因为这边请求改变数据之后刚好能渲染。</div>
+				<div class="title">5.beforeUpdate:</div>
+				<div class="mt">数据更新之前，页面数据还是原来的数据</div>
+				<div class="title">6.updated:</div>
+				<div class="mt">数据更新完毕，页面的数据是更新完成的</div>
+				<div class="title">7.beforeDestroy:</div>
+				<div class="mt">组件销毁之前执行</div>
+				<div class="title">7.Destroyed:</div>
+				<div class="mt">组件销毁之后执行</div>
+			</section>
+			<section id="id5">
+				<h2>模板语法</h2>
+				<img src="./image/vue/3.jpg" alt="">
+			</section>
+			<section id="id6">
+				<h2>指令</h2>
+				<div>以v-开头的特殊属性：如v-if;v-show;v-bind等</div>
+				<div class="mt">v-bind可缩写为:bind</div>
+				<div class="mt">v-on可缩写为@</div>
+			</section>
+			<section id="id7">
+				<h2>computed计算属性</h2>
+				<div>模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护</div>
+				<img src="./image/vue/4.jpg" alt="">
+				<img src="./image/vue/5.jpg" alt="">
+				<div>计算属性是基于它们的响应式依赖进行缓存的,只有他相关的依赖发生改变才会重新计算，这里也就是message不发生改变，就不会重新计算</div>
+			</section>
+			<section id="id8">
+				<h2>watch属性</h2>
+				<div>数据发生改变的时候会执行</div>
+				<img src="./image/vue/6.jpg" alt="">
+				<img src="./image/vue/7.jpg" alt="">
+			</section>
+			<section id="id9">
+				<h2>class与style绑定</h2>
+				<div>操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 v-bind 处理它们</div>
+				<div class="title">1.class绑定</div>
+				<img src="./image/vue/8.jpg" alt="">
+				<img src="./image/vue/9.jpg" alt="">
+				<img src="./image/vue/10.jpg" alt="">
+				<div class="title">2.style绑定</div>
+				<img src="./image/vue/11.jpg" alt="">
+				<img src="./image/vue/12.jpg" alt="">
+			</section>
+			<section id="id10">
+				<h2>条件渲染</h2>
+				<div class="title">1.v-if</div>
+				<img src="./image/vue/13.jpg" alt="">
+				<img src="./image/vue/14.jpg" alt="">
+				<div class="title">2.v-show</div>
+				<img src="./image/vue/15.jpg" alt="">
+				<div class="mt">v-if和v-show的区别：v-if在切换过程中会重新渲染该元素，v-show则只是单纯的现实隐藏，元素会一直存在</div>
+			</section>
+			<section id="id11">
+				<h2>列表渲染</h2>
+				<img src="./image/vue/16.jpg" alt="">
+				<img src="./image/vue/17.jpg" alt="">
+				<div>key的作用：提高渲染性能，不会改变原有的元素数据，只会渲染新的数据</div>
+			</section>
+			<section id="id12">
+				<h2>事件处理</h2>
+				<div>使v-on来监听DOM事件</div>
+				<img src="./image/vue/18.jpg" alt="">
+				<img src="./image/vue/19.jpg" alt="">
+				<div>事件修饰符</div>
+				<img src="./image/vue/20.jpg" alt="">
+			</section>
+			<section id="id13">
+				<h2>数据绑定</h2>
+				<div class="title">1.输入框</div>
+				<img src="./image/vue/21.jpg" alt="">
+				<img src="./image/vue/22.jpg" alt="">
+				<div class="title">2.复选框</div>
+				<img src="./image/vue/23.jpg" alt="">
+				<img src="./image/vue/24.jpg" alt="">
+				<div class="title">3.下拉框</div>
+				<img src="./image/vue/25.jpg" alt="">
+				<img src="./image/vue/26.jpg" alt="">
+			</section>
+			<section id="id14">
+				<h2>组件</h2>
+				<img src="./image/vue/27.jpg" alt="">
+				<img src="./image/vue/28.jpg" alt="">
+				<img src="./image/vue/29.jpg" alt="">
+				<img src="./image/vue/30.jpg" alt="">
+			</section>
+			<section id="id15">
+				<h2>路由</h2>
+				<a href="./router.html">
+					<div class="btn">路由</div>
+				</a>
+			</section>
+		</div>
+	</div>
+</body>
+<script>
+	$(function() {
+		$('.link').click(function() {
+			let a = $(this).attr('name')
+			let top = $(a).offset().top
+			$('html,body').animate({scrollTop:top},300);
+			$('.menu').find('li').removeClass('active');
+			$(this).addClass('active');
+		})
+	})
+</script>
+
+</html>

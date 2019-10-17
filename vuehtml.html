@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="./class.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app" style="margin:20px;">
+		<section>
+			<div class="title">模板语法：</div>
+			<div>{{ message }}</div>
+		</section>
+		<section>
+			<div class="title">指令</div>
+			<div v-bind:name="val">{{val}}</div>
+			<div :name="val">{{val}}</div>
+			<div class="btn" v-on:click="test">点击</div>
+			<div class="btn" @click="test">点击</div>
+			<div class="btn" @click="message = 1">改变message</div>
+		</section>
+		<section>
+			<div class="title">watch属性</div>
+			<div class="btn" @click="message = 'how are you'">点击改变message</div>
+		</section>
+		<section>
+			<div class="title">class和style绑定</div>
+			<div class="btn" :class="{'name':isName}">btn</div>
+			<div class="btn name">btn</div>
+			<div :style="{'color':myColor}">test</div>
+			<div :style=myStyle>test</div>
+		</section>
+		<section>
+			<div class="title">条件渲染</div>
+			<div v-if="age > 18">成年人</div>
+			<div v-else>未成年人</div>
+			<div v-show="age > 18">成年人</div>
+		</section>
+		<section>
+			<div class="title">列表渲染</div>
+			<div v-for="(item,index) in list" :key="index">{{index+'.'}} {{item.name}}</div>
+		</section>
+		<section>
+			<div class="title">事件处理</div>
+			<div class="btn" v-on:click.stop="clickEvent">点击事件</div>
+			<input class="block mt" placeholder="请按enter键" @keyup.enter="enterEvent"></input>
+		</section>
+		<section>
+			<div class="title">数据绑定</div>
+			<div >1.输入框</div>
+			<input class="mt" type="text" class="block" placeholder="请输入内容" v-model="inputVal">
+			<div class="mt">输入的值为：{{inputVal}}</div>
+			<div class="mt">2.复选框</div>
+			<div class="mt">
+				<input type="checkbox" v-model="checkboxNames" value="html" style="width:12px;height:12px;">html
+				<input type="checkbox" v-model="checkboxNames" value="css" style="width:12px;height:12px;">css
+				<input type="checkbox" v-model="checkboxNames" value="js" style="width:12px;height:12px;">js
+				<div class="mt">选择的为：{{checkboxNames}}</div>
+			</div>
+			<div class="mt">3.下拉框</div>
+			<select class="mt" v-model="selectVal" placeholder="请选择">
+				<option disabled value="">请选择</option>
+				<option value="html">html</option>
+				<option value="css">css</option>
+				<option value="js">js</option>
+			</select>
+			<div class="mt">你选择的是：{{selectVal}}</div>
+			
+		</section>
+		<section>
+			<div class="title">组件</div>
+			<my-button ></my-button>
+			<Btn :name="自定义按钮"></Btn>
+		</section>
+	</div>
+	
+</body>
+<script type="module">
+	Vue.component('my-button', {
+		methods: {
+			clickEvent() {
+				alert('这是我的组件按钮')
+			}
+		},
+		template: '<div @click="clickEvent" class="btn">组件按钮</div>'
+	})
+	var app = new Vue({
+		el: '#app',
+		data: {
+			selectVal:''
+		},
+		data: {
+			message: 'Hello Vue!',
+			val:1,
+			isName:true,
+			myColor:'red',
+			myStyle: {
+				color:'red'
+			},
+			age:19,
+			list:[
+				{name:'html'},
+				{name:'css'},
+				{name:'js'}
+			],
+			inputVal:'',
+			checkboxNames:[],
+			selectVal:''
+		},
+		watch: {
+			message(val) {
+				console.log(val) // 会打印：1
+			}
+		},
+		component: {
+			// Btn
+		},
+		computed: {
+			reversedMessage: function () {
+				return this.message.split('').reverse().join('')
+			}
+		},
+		methods: {
+			test() {
+				console.log('vue')
+			},
+			clickEvent() {
+				alert('这是点击事件')
+			},
+			enterEvent() {
+				console.log('按了enter键')
+			}
+		}
+	})
+
+	
+</script>
+</html>
