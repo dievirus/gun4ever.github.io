@@ -1,167 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>高路信息-前端开发</title>
-</head>
-<style>
-	.btn-group {
-		text-align: center;
-		margin-top:100px;
-		position:absolute;
-		left:0;
-		top:50px;
-		width:100%;
-	}
-	.btn {
-		text-decoration: none;
-		display:inline-block;
-		width:120px;
-		height:48px;
-		border-radius: 4px;
-		color:#fff;
-		text-align: center;
-		line-height:48px;
-		transition:.3s;
-		font-size:18px;
-		font-family: "Microsoft YaHei";
-		margin:10px;
-	}
-	.html-btn {
-		background:#409EFF;
-	}
-	.css-btn {
-		background:#E6A23C;
-	}
-	.js-btn {
-		background:#F56C6C;
-	}
-	.vue-btn {
-		background:#67C23A;
-	}
-	a:hover {
-		opacity: .8;
-		transition:.3s;
-	}
-	.title {
-		font-size:20px;
-		text-align: center;
-		padding-top:50px;
-	}	  		
-</style>
-<body>
-	<div class="title">高路交通—前端</div>
-	<canvas id="Mycanvas"></canvas>
-	<div class="btn-group">
-		<a href="./class1.html" class="btn html-btn">html基础</a>
-		<a href="./class2.html" class="btn css-btn">css基础</a>
-		<a href="./class3.html" class="btn js-btn">js基础</a>
-		<a href="./class4.html" class="btn vue-btn">Vue基础</a>
-	</div>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet/less" type="text/css" href="./css/index.less">
+		<script src="./js/vue.min.js"></script>
+		<script src="./js/less.min.js"></script>
+	</head>
+	<body>
+		<div class="container" id="app">
+			<div class="bg">
+				<img src="./image/bg.png" alt="">
+			</div>
+			<div class="left">
+				<div class="top">
+					<span class="label">抽签结果</span>
+					<div class="btn">确认</div>
+				</div>
+				<div class="content">
+					<div class="c-header">
+						<span>序号</span>
+						<span>公司名/姓名</span>
+						<span>号码</span>
+					</div>
+					<ul class="list-wrap">
+						<li class="item" v-for="(item,index) in a">
+							<div class="sort">1</div>
+							<div class="name-wrap">
+								<span>高路信息</span>
+								<span>张XX</span>
+							</div>
+							<div>
+								<input type="text">
+							</div>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="right">
+				<div class="top">
+					<div class="img-wrap">中签结果</div>
+					<div class="legend">
+						<span class="label"></span>
+						<span class="text">当前中签序号</span>
+					</div>
+				</div>
+				<div class="content">
+					<div class="c-header">
+						<div class="item" v-for="(item,index) in b">
+							<span>号码</span>
+							<span>公司名/姓名</span>
+						</div>
+					</div>
+					<ul class="list-wrap">
+						<li class="" v-for="(item,index) in aa" >
+							<div class="item" v-for="(item1,index1) in bb" :class="{'active':index < 3}">
+								<div class="sort">111</div>
+								<div class="name-wrap">
+									<span>高路信息</span>
+									<span>张张小小</span>
+								</div>
+							</div>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
 	<script>
-			//定义画布宽高和生成点的个数
-			var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 35;
+		var vm = new Vue({
+			el: '#app',
+			data() {
+				return {
+					a:25,
+					b:13,
+					c:286,
+					aa:13,
+					bb:22
+				}
+			}
 			
-			var canvas = document.getElementById('Mycanvas');
-			canvas.width = WIDTH,
-			canvas.height = HEIGHT;
-			var context = canvas.getContext('2d');
-			context.strokeStyle = 'rgba(0,0,0,0.2)',
-			context.strokeWidth = 1,
-			context.fillStyle = 'rgba(0,0,0,0.1)';
-			var circleArr = [];
-
-			//线条：开始xy坐标，结束xy坐标，线条透明度
-			function Line (x, y, _x, _y, o) {
-					this.beginX = x,
-					this.beginY = y,
-					this.closeX = _x,
-					this.closeY = _y,
-					this.o = o;
-			}
-			//点：圆心xy坐标，半径，每帧移动xy的距离
-			function Circle (x, y, r, moveX, moveY) {
-					this.x = x,
-					this.y = y,
-					this.r = r,
-					this.moveX = moveX,
-					this.moveY = moveY;
-			}
-			//生成max和min之间的随机数
-			function num (max, _min) {
-					var min = arguments[1] || 0;
-					return Math.floor(Math.random()*(max-min+1)+min);
-			}
-			// 绘制原点
-			function drawCricle (cxt, x, y, r, moveX, moveY) {
-					var circle = new Circle(x, y, r, moveX, moveY)
-					cxt.beginPath()
-					cxt.arc(circle.x, circle.y, circle.r, 0, 2*Math.PI)
-					cxt.closePath()
-					cxt.fill();
-					return circle;
-			}
-			//绘制线条
-			function drawLine (cxt, x, y, _x, _y, o) {
-					var line = new Line(x, y, _x, _y, o)
-					cxt.beginPath()
-					cxt.strokeStyle = 'rgba(0,0,0,'+ o +')'
-					cxt.moveTo(line.beginX, line.beginY)
-					cxt.lineTo(line.closeX, line.closeY)
-					cxt.closePath()
-					cxt.stroke();
-
-			}
-			//初始化生成原点
-			function init () {
-					circleArr = [];
-					for (var i = 0; i < POINT; i++) {
-							circleArr.push(drawCricle(context, num(WIDTH), num(HEIGHT), num(15, 2), num(10, -10)/40, num(10, -10)/40));
-					}
-					draw();
-			}
-
-			//每帧绘制
-			function draw () {
-					context.clearRect(0,0,canvas.width, canvas.height);
-					for (var i = 0; i < POINT; i++) {
-							drawCricle(context, circleArr[i].x, circleArr[i].y, circleArr[i].r);
-					}
-					for (var i = 0; i < POINT; i++) {
-							for (var j = 0; j < POINT; j++) {
-									if (i + j < POINT) {
-											var A = Math.abs(circleArr[i+j].x - circleArr[i].x),
-													B = Math.abs(circleArr[i+j].y - circleArr[i].y);
-											var lineLength = Math.sqrt(A*A + B*B);
-											var C = 1/lineLength*7-0.009;
-											var lineOpacity = C > 0.03 ? 0.03 : C;
-											if (lineOpacity > 0) {
-													drawLine(context, circleArr[i].x, circleArr[i].y, circleArr[i+j].x, circleArr[i+j].y, lineOpacity);
-											}
-									}
-							}
-					}
-			}
-
-			//调用执行
-			window.onload = function () {
-					init();
-					setInterval(function () {
-							for (var i = 0; i < POINT; i++) {
-									var cir = circleArr[i];
-									cir.x += cir.moveX;
-									cir.y += cir.moveY;
-									if (cir.x > WIDTH) cir.x = 0;
-									else if (cir.x < 0) cir.x = WIDTH;
-									if (cir.y > HEIGHT) cir.y = 0;
-									else if (cir.y < 0) cir.y = HEIGHT;
-									
-							}
-							draw();
-					}, 16);
-			}
-
+		})
 	</script>
-</body>
-
 </html>
